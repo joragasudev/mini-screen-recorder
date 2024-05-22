@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Recorder</title>
+    <link rel="stylesheet" href="css/pico.min.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/assets/icon-192x192.png">
+    
+</head>
+<body class="flexCenter">
+        <div id="appContainer" class = "flexCenter flexColumn">
+
+            <button id="recordButton" class="width100 margins" >Start Recording</button>
+            
+            <div class="configurationsContainer">
+                <div class="width100 margins">
+                    <div class="flexCenter flexColumn ">
+                        <label id="rangeLabel" for="qualityPresets">Quality</label>
+                        <input type="range" id="qualityPresets" name="qualityPresets" min="0" max="2" value="1" step="1" list="qualityPresetsList" />
+                    </div>
+        
+                    <datalist id="qualityPresetsList" class="flexSpaceBetween" >
+                        <option value="0" label="Low"></option>
+                        <option value="1" label="Medium"></option>
+                        <option value="2" label="High"></option>
+                    </datalist>
+                </div>
+            
+                
+                <div class="width100 flexSpaceBetween margins">
+                    <div>
+                        <input type="checkbox" id="videoCheckBox" name="videoCheckBox" role="switch" checked/>  
+                        <label for="videoCheckBox">Video</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="audioCheckBox" name="audioCheckBox" role="switch" checked>
+                        <label for="audioCheckBox">Audio</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="micCheckBox" name="micCheckBox" role="switch" checked>  
+                        <label for="micCheckBox">Mic</label>
+                    </div>
+                </div>
+            </div>
+            <small>(Your browser may not support all options.)</small>
+            
+            <a href="https://www.github.com/joragasudev">
+                <img src="assets/github-mark.svg" alt="github repository">
+            </a>
+        </div>
+</body>
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service Worker registered:', registration);
+          })
+          .catch(error => {
+            console.error('Error registering Service Worker:', error);
+          });
+      });
+    }
+</script>
+<script src="js/script.js"></script>
+</html>

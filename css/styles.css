@@ -1,0 +1,61 @@
+body { 
+    height: 100vh;
+}
+button{
+    height: 100px;
+}
+.flexCenter { 
+    display: flex;
+	align-items: center;
+	justify-content: center; 
+}
+.flexColumn{
+    flex-direction: column;
+}
+.flexSpaceBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+option {
+    padding: 0;
+}
+.width100{
+    width: 100%;
+}
+.configurationsContainer{
+    width: 360px;
+}
+#appContainer{
+    width: 480px;
+}
+.margins{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+input[type="checkbox"]{
+    margin-right: 0px;
+}
+img{
+    width: 40px;
+    padding-top: 10px;
+}
+
+@keyframes breathAnimation {
+    0% {
+      background-color: red;
+    }
+    50% {
+      background-color: darkred;
+    }
+    100% {
+      background-color: red;
+    }
+}
+  
+.recordingAnimation {
+    animation-name: breathAnimation;
+    animation-duration: 3s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+}
