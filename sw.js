@@ -7,7 +7,7 @@ const urlsToCache = [
   '/assets/icon-192x192.png',
   '/assets/icon-512x512.png',
   '/assets/github-mark.svg',
-  '/manifest.json',
+  '/mini-screen-recorder/manifest.json',
 ];
 
 self.addEventListener('install', event => {
